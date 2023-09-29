@@ -1,0 +1,40 @@
+export type Order = {
+  id: number;
+  status: string;
+  dateCreated: string;
+  pricesIncludeTax: string;
+  discountTotal: string;
+  shippingTotal: string;
+  total: string;
+  totalTax: string;
+  paymentMethodTitle: string;
+  transactionId: string;
+  datePaid: Date | null;
+  products: string;
+  billingFirstName: string;
+  billingLastName: string;
+  billingCompany: string;
+  billingAddress1: string;
+  billingAddress2: string;
+  billingCity: string;
+  billingState: string;
+  billingPostcode: string;
+  billingEmail?: string;
+  billingPhone: string;
+  shippingFirstName: string;
+  shippingLastName: string;
+  shippingCompany: string;
+  shippingAddress1: string;
+  shippingAddress2: string;
+  shippingCity: string;
+  shippingState: string;
+  shippingPostcode: string;
+  shippingPhone: string;
+};
+
+export type OrderProduct = {
+  quantity: number;
+  name: string;
+  price: string;
+  total: string;
+};
