@@ -1,4 +1,4 @@
-import type { OrderProduct } from '../types';
+import type { OrderProduct } from '../types/orders';
 
 type MapWoocommerceProducts = (products: OrderProduct[]) => string[];
 
