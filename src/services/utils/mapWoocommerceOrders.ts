@@ -1,7 +1,7 @@
 import { mapWoocommerceProducts } from './mapWoocommerceProducts.js';
 
-import type { WoocommerceOrder } from '../types/woocommerce.js';
-import type { Order } from '../types/orders.js';
+import type { WoocommerceOrder } from '../types.js';
+import type { Order } from '../../types.js';
 
 type MapWoocommerceOrders = (orders: WoocommerceOrder[]) => Order[];
 

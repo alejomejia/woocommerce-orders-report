@@ -1,11 +1,11 @@
-import { WORDPRESS_BASE_URL, ORDERS_PER_PAGE } from '../const.js';
-
 import { mapWoocommerceOrders } from './utils/mapWoocommerceOrders.js';
 import { getBasicAuthToken } from './getBasicAuthToken.js';
+import { ORDERS_PER_PAGE } from './const.js';
+import type { WoocommerceOrder } from './types.js';
 
 import { logger } from '../utils/logger.js';
 import { getCurrentDate } from '../utils/getCurrentDate.js';
-import type { WoocommerceOrder } from './types/woocommerce.js';
+import { WORDPRESS_BASE_URL } from '../const.js';
 
 export const getDailyWoocommerceOrders = async () => {
   const headers = new Headers();
