@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': 16.7.13
+  '@types/node-schedule': 2.1.1
   '@types/nodemailer': 6.4.11
   concurrently: 8.2.1
   date-fns: 2.30.0
@@ -16,6 +17,7 @@ specifiers:
 
 devDependencies:
   '@types/node': 16.7.13
+  '@types/node-schedule': 2.1.1
   '@types/nodemailer': 6.4.11
   concurrently: 8.2.1
   date-fns: 2.30.0
@@ -170,6 +172,12 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/node-schedule/2.1.1:
+    resolution: {integrity: sha512-FaqkbBizA+DinA0XWtAhdbEXykUkkqzBWT4BSnhn71z9C+vvcDgNcHvTP59nBhMg3o39E/ZY8zB/AQ6/HGuRag==}
+    dependencies:
+      '@types/node': 16.7.13
     dev: true
 
   /@types/node/16.7.13:

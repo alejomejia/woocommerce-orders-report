@@ -18,10 +18,16 @@ type EmailHtml = {
   [key in EmailContext]: string;
 };
 
+const DEBUG_MODE = false;
+
 export const sendMail = async ({
   context,
   ordersCount,
 }: SendMailArgs): Promise<void> => {
+  if (DEBUG_MODE) {
+    return;
+  }
+
   const currentDate = getCurrentDate('LLLL ee yyyy');
   const filename = createExcelFilename();
 

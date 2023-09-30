@@ -1,30 +1,16 @@
 import 'dotenv/config';
+import { scheduleJob } from 'node-schedule';
 
 import { logger } from './utils/logger.js';
+import { EMAIL_RECEIVER } from './mailer/const.js';
 
-import { getDailyWoocommerceOrders } from './services/getDailyWoocommerceOrders.js';
-import { createExcelFile } from './files/createExcelFile.js';
-import { sendMail } from './mailer/sendMail.js';
+import { generateReport } from './generateReport.js';
 
-async function App() {
-  try {
-    const dailyWoocommerceOrders = await getDailyWoocommerceOrders();
-    const ordersCount = dailyWoocommerceOrders.length;
-
-    if (Boolean(ordersCount)) {
-      createExcelFile(dailyWoocommerceOrders);
-      sendMail({
-        context: 'orders',
-        ordersCount,
-      });
-    } else {
-      sendMail({
-        context: 'noOrders',
-      });
-    }
-  } catch (e) {
-    logger.error(String(e));
-  }
+function App() {
+  scheduleJob('send-report', '59 23 * * *', async () => {
+    await generateReport();
+    logger.success(`Report generated and sent to: ${EMAIL_RECEIVER}`);
+  });
 }
 
 App();
