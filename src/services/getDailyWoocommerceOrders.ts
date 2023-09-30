@@ -11,8 +11,7 @@ export const getDailyWoocommerceOrders = async () => {
   const basicAuthToken = getBasicAuthToken();
   headers.set('Authorization', `Basic ${basicAuthToken}`);
 
-  // const currentDate = getCurrentDate()
-  const currentDate = '2023-07-18T00:00:00';
+  const currentDate = getCurrentDate();
 
   const url = `${WORDPRESS_BASE_URL}/wp-json/wc/v1/orders/?after=${currentDate}&per_page=${ORDERS_PER_PAGE}`;
 
