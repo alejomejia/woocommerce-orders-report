@@ -1,1 +1,6 @@
+export const WORDPRESS_BASE_URL = process.env.WORDPRESS_BASE_URL;
+
+export const WOOCOMMERCE_API_USERNAME = process.env.WOOCOMMERCE_API_USERNAME;
+export const WOOCOMMERCE_API_PASSWORD = process.env.WOOCOMMERCE_API_PASSWORD;
+
 export const ORDERS_PER_PAGE = 100;

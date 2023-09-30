@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import * as XLSX from 'xlsx';
+import * as xlsx from 'xlsx';
 
 import { createExcelFilename } from './createExcelFilename.js';
 import { EXCEL_HEADERS, TEMP_DIR_NAME } from './const.js';
@@ -10,10 +10,10 @@ import { Order } from '../types.js';
 type CreateExcelFile = (orders: Order[]) => void;
 
 export const createExcelFile: CreateExcelFile = async (orders) => {
-  XLSX.set_fs(fs);
+  xlsx.set_fs(fs);
 
-  const workbook = XLSX.utils.book_new();
-  const worksheet = XLSX.utils.json_to_sheet(orders);
+  const workbook = xlsx.utils.book_new();
+  const worksheet = xlsx.utils.json_to_sheet(orders);
 
   const filename = createExcelFilename();
 
@@ -29,12 +29,12 @@ export const createExcelFile: CreateExcelFile = async (orders) => {
   logger.info('Creating excel file...');
 
   // Add worksheet tab name
-  XLSX.utils.book_append_sheet(workbook, worksheet, 'Pedidos');
+  xlsx.utils.book_append_sheet(workbook, worksheet, 'Pedidos');
 
   // Update column names
-  XLSX.utils.sheet_add_aoa(worksheet, [EXCEL_HEADERS], { origin: 'A1' });
+  xlsx.utils.sheet_add_aoa(worksheet, [EXCEL_HEADERS], { origin: 'A1' });
 
-  XLSX.writeFile(workbook, path, { compression: true });
+  xlsx.writeFile(workbook, path, { compression: true });
 
   logger.success('Excel file created!');
 };

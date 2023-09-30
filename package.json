@@ -5,8 +5,8 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "dev": "concurrently --raw \"npm:dev:*\";",
-    "dev:ts": "tsc --watch",
+    "dev": "concurrently \"pnpm dev:ts\" \"pnpm dev:js\"",
+    "dev:ts": "tsc --watch && tsc-alias --watch",
     "dev:js": "node --watch dist/index.js",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"src/**/*.ts\""
@@ -16,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "16.7.13",
+    "@types/nodemailer": "6.4.11",
     "concurrently": "8.2.1",
     "date-fns": "2.30.0",
     "dotenv": "16.3.1",

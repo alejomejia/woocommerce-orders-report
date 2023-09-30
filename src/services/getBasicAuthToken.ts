@@ -1,7 +1,4 @@
-import {
-  WOOCOMMERCE_API_USERNAME,
-  WOOCOMMERCE_API_PASSWORD,
-} from '../const.js';
+import { WOOCOMMERCE_API_USERNAME, WOOCOMMERCE_API_PASSWORD } from './const.js';
 
 type GetBasicAuthToken = () => string;
 
